@@ -8,7 +8,7 @@ ADD config/runit/1.d/cleanup-pids /etc/runit/1.d/cleanup-pids
 ADD config/runit/2 /etc/runit/2
 ADD runit_bootstrap /usr/sbin/runit_bootstrap
 
-RUN echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main" | tee -a /etc/apt/sources.list.d/mono-xamarin.list \
+RUN echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat/snapshots/4.0.0 main" | tee -a /etc/apt/sources.list.d/mono-xamarin.list \
     && apt-get update \
     && apt-get install runit nginx mono-fastcgi-server4 -y --no-install-recommends \
     && apt-get clean \
